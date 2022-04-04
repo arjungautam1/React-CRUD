@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
-import {Link, NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const Home = () => {
 
@@ -13,7 +13,7 @@ const Home = () => {
 
     const loadUsers = async () => {
         const result = await axios.get("http://localhost:3001/users")
-        setUser(result.data)
+        setUser(result.data.reverse())
     }
     return (
         <div className='container'>
@@ -25,7 +25,7 @@ const Home = () => {
                         <th scope="col">Name</th>
                         <th scope="col">User Name</th>
                         <th scope="col">Email</th>
-                        <th scope={"col"}>Action</th>
+                        <th scope="col">Action</th>
                     </tr>
                     </thead>
                     <tbody>
