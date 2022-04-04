@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link,NavLink } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -12,16 +12,17 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <Link className="nav-link" aria-current="page" to="/">Home</Link>
+                            <NavLink className="nav-link" aria-current="page" exact to="/">Home</NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link " aria-current="page" to="/about">About</Link>
+                            <NavLink className="nav-link " aria-current="page" exact to="/about">About</NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link " aria-current="page" to="/contact">Contact</Link>
+                            <NavLink className="nav-link " aria-current="page" exact to="/contact">Contact</NavLink>
                         </li>
                        </ul>
                 </div>
+                <button className={"btn btn-outline-light"}>Add User</button>
             </div>
         </nav>    )
 }
