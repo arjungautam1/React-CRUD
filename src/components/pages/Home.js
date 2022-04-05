@@ -38,7 +38,7 @@ const Home = () => {
                                 <td>{user.email}</td>
                                 <td>
                                     <Link className="btn btn-primary mx-2"  exact to="/view">View</Link>
-                                    <Link className="btn btn-outline-primary mx-2"  exact to="/view">Edit</Link>
+                                    <Link className="btn btn-outline-primary mx-2"  exact to={`/edituser/${user.id}`}>Edit</Link>
                                     <Link className="btn btn-danger"  exact to="/delete">Delete</Link>
                                 </td>
                             </tr>

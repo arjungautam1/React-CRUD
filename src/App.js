@@ -7,6 +7,7 @@ import Navbar from './components/layout/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ViewUser from "./components/users/ViewUser";
 import AddUser from "./components/users/AddUser";
+import EditUser from "./components/users/EditUser";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route exact path='/about' element={<About />} />
           <Route exact path='/contact' element={<Contact />} />
           <Route exact path='/adduser' element={<AddUser />} />
+          <Route exact path='/edituser/:id' element={<EditUser />} />
           <Route exact path={"/view"} element={<ViewUser/>}/>
 
         </Routes>
