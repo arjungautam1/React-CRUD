@@ -14,7 +14,7 @@ const Home = () => {
 
     const loadUsers = async () => {
         const result = await axios.get("http://localhost:3001/users")
-        setUser(result.data.reverse())
+        setUser(result.data)
     }
 
     const deleteUser=async id=>{
@@ -44,7 +44,7 @@ const Home = () => {
                                 <td>{user.username}</td>
                                 <td>{user.email}</td>
                                 <td>
-                                    <Link className="btn btn-primary mx-2" component={<ViewUser/>} exact to="/view">View</Link>
+                                    <Link className="btn btn-primary mx-2" component={<ViewUser/>} exact to={`/view/${user.id}`}>View</Link>
                                     <Link className="btn btn-outline-primary mx-2"  exact to={`/edituser/${user.id}`}>Edit</Link>
                                     <button className="btn btn-danger" onClick={()=>deleteUser(user.id)}>Delete</button>
 
