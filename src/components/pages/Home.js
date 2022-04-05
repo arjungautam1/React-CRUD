@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {Link} from "react-router-dom";
+import ViewUser from "../users/ViewUser";
 
 const Home = () => {
 
@@ -14,6 +15,12 @@ const Home = () => {
     const loadUsers = async () => {
         const result = await axios.get("http://localhost:3001/users")
         setUser(result.data.reverse())
+    }
+
+    const deleteUser=async id=>{
+        await axios.delete(`http://localhost:3001/users/${id}`);
+        loadUsers()
+
     }
     return (
         <div className='container'>
@@ -37,9 +44,10 @@ const Home = () => {
                                 <td>{user.username}</td>
                                 <td>{user.email}</td>
                                 <td>
-                                    <Link className="btn btn-primary mx-2"  exact to="/view">View</Link>
+                                    <Link className="btn btn-primary mx-2" component={<ViewUser/>} exact to="/view">View</Link>
                                     <Link className="btn btn-outline-primary mx-2"  exact to={`/edituser/${user.id}`}>Edit</Link>
-                                    <Link className="btn btn-danger"  exact to="/delete">Delete</Link>
+                                    <button className="btn btn-danger" onClick={()=>deleteUser(user.id)}>Delete</button>
+
                                 </td>
                             </tr>
                         ))

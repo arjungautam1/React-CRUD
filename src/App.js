@@ -4,7 +4,7 @@ import Home from './components/pages/Home'
 import About from './components/pages/About';
 import Contact from './components/pages/Contact';
 import Navbar from './components/layout/Navbar';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {  BrowserRouter as Router,  Routes,  Route} from "react-router-dom";
 import ViewUser from "./components/users/ViewUser";
 import AddUser from "./components/users/AddUser";
 import EditUser from "./components/users/EditUser";
