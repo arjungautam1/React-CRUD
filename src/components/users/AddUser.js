@@ -19,7 +19,7 @@ const AddUser = () => {
 
   const onSubmit=async (e)=>{
       e.preventDefault()
-      await axios.post("http://localhost:3001/users",user)
+      await axios.post("http://localhost:8080/employees",user)
       navigate("/")
   }
   return (

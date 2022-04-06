@@ -20,7 +20,7 @@ const ViewUser = () => {
     )
 
     const loadUser=async ()=>{
-        const res=await axios.get(`http://localhost:3001/users/${id}`)
+        const res=await axios.get(`http://localhost:8080/employee/${id}`)
             setUser(res.data);
     }
 

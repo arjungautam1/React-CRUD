@@ -15,6 +15,14 @@
       "phone": "",
       "website": "",
       "id": 2
+    },
+    {
+      "name": "Demo User",
+      "username": "demo ",
+      "email": "demo@gmail.com",
+      "phone": "",
+      "website": "",
+      "id": 3
     }
   ]
 }
